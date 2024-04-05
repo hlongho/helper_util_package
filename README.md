@@ -45,11 +45,11 @@ Package bao gồm các hàm thông dụng, đã điều chỉnh để dễ sử 
 - getMapData(String pathJsonFile)
 # StringUtil
 - Mã hoá string sang dạng Md5
-+ toMd5(String input)
+    + toMd5(String input)
 - Chuyển định dạng tiền tệ input dạng double
-+ toCurrency(double number)
+    + toCurrency(double number)
 - xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm
-+ removeDiacritics(String input)
+    + removeDiacritics(String input)
 - Các loại validate
     + isEmail(String input)
     + isPhoneNumber(String input)
