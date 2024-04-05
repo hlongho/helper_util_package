@@ -1,18 +1,18 @@
 Package bao gồm các hàm thông dụng, đã điều chỉnh để dễ sử dụng hơn và được gom chung vào 1 package
 
-## Usage
+# Usage
 Có 2 cách để khai báo package vào dự án:
-# Download package về và bỏ vào dự án và khai báo vào pubspec.yaml
+## Download package về và bỏ vào dự án và khai báo vào pubspec.yaml
 - helper_util_package:
   + path: ./helper_util_package
-# Khai báo link github vào pubspec.yaml
+## Khai báo link github vào pubspec.yaml
 - helper_util_package:
    + git:
       + url: https://github.com/hlongho/helper_util_package.git
       + ref: main
 
-## Function
-# DateTimeUtils
+# Function
+## DateTimeUtils
 - return DateTime monday - sunday in week at now
     + getMonday
     + getTuesday
@@ -29,7 +29,7 @@ Có 2 cách để khai báo package vào dự án:
     + getFridayByTime(DateTime time)
     + getSaturdayByTime(DateTime time)
     + getSundayByTime(DateTime time)
-# FormatDate
+## FormatDate
 - chuyển đổi định dạng data qua lại từ datatime->string, string->datetime, string->string với các loại định dạng:
     + dd/MM/yyyy
     + yyyy-MM-dd
@@ -40,10 +40,10 @@ Có 2 cách để khai báo package vào dự án:
 - dateTimeToString(DateTime? date, EDateFM fm)
 - stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
 - stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
-# JsonFileUtil
+## JsonFileUtil
 Đọc file json và trả về data dạng Map
 - getMapData(String pathJsonFile)
-# StringUtil
+## StringUtil
 - Mã hoá string sang dạng Md5
     + toMd5(String input)
 - Chuyển định dạng tiền tệ input dạng double
@@ -55,9 +55,9 @@ Có 2 cách để khai báo package vào dự án:
     + isPhoneNumber(String input)
     + isValidCCCD(String cccd)
     + isValidPassport(String passport)
-# DeviceUtil
+## DeviceUtil
 Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet dạng xoay ngang hoặc dọc
-# ResponsiveUtil
+## ResponsiveUtil
 trả về size dựa vào định dạng thiết bị đang dùng
 - getSize({double? iphone, double? ipad, double? ipadLandscape})
 
