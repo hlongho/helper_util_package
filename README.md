@@ -33,7 +33,6 @@ Có 2 cách để khai báo package vào dự án:
 
 ## FormatDate
 - enum EDateFM {ddMMyyyy,yyyyMMdd,yyyyMMddHHmmss,ddMMyyyyHHmm,yyyyMMddTHHmmssSSSZ,HHmmddMMyyyy}
-
 - các loại định dạng tương ứng với enum EDateFM:
     + dd/MM/yyyy
     + yyyy-MM-dd
@@ -42,10 +41,12 @@ Có 2 cách để khai báo package vào dự án:
     + yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
     + HH:mm dd/MM/yyyy
 
+
 trả về kiểu String: convert datetime truyền vào sang string với định dạng của enum EDateFM
   - String dateTimeToString(DateTime? date, EDateFM fm)
     + DateTime? date: Ngày cần chuyển sang kiểu String
     + EDateFM fm: kiểu định dạng trả về của String
+
 
 trả về DateTime: convert string có định dạng của enum EDateFM
 - DateTime stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
@@ -53,12 +54,14 @@ trả về DateTime: convert string có định dạng của enum EDateFM
   + EDateFM fm: kiểu định dạng của String đang truyền vào
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
 
-trả về kiểu String: convert string có định dạng của EDateFM fmFrom sang string có định dạng EDateFM fmTo trả về kiểu String
+
+trả về kiểu String: convert string có định dạng của EDateFM fmFrom sang string có định dạng EDateFM fmTo
 - String stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
   + String? string: chuỗi cần chuyển định dạng
   + EDateFM fmFrom: kiểu định dạng của String đang truyền vào
   + EDateFM fmTo: kiểu định dạng của String cần trả về
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
+
 
 ## JsonFileUtil
 Đọc file json và trả về data dạng Map
