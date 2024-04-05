@@ -1,7 +1,7 @@
 Package bao gồm các hàm thông dụng, đã điều chỉnh để dễ sử dụng hơn và được gom chung vào 1 package
 
 ## Usage
-#Có 2 cách để khai báo package vào dự án:
+# Có 2 cách để khai báo package vào dự án:
 Download package về và bỏ vào dự án và khai báo vào pubspec.yaml
 - helper_util_package:
   + path: ./helper_util_package
