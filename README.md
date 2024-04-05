@@ -13,7 +13,7 @@ Package bao gồm các hàm thông dụng, đã điều chỉnh để dễ sử 
 
 ## Function
 # DateTimeUtils
-return DateTime monday - sunday in week at now
+- return DateTime monday - sunday in week at now
     + getMonday
     + getTuesday
     + getWednesday
@@ -21,7 +21,7 @@ return DateTime monday - sunday in week at now
     + getFriday
     + getSaturday
     + getSunday
-return DateTime monday - sunday in week at time input
+- return DateTime monday - sunday in week at time input
     + getMondayByTime(DateTime time)
     + getTuesdayByTime(DateTime time)
     + getWednesdayByTime(DateTime time)
@@ -30,7 +30,7 @@ return DateTime monday - sunday in week at time input
     + getSaturdayByTime(DateTime time)
     + getSundayByTime(DateTime time)
 # FormatDate
-chuyển đổi định dạng data qua lại từ datatime->string, string->datetime, string->string với các loại định dạng:
+- chuyển đổi định dạng data qua lại từ datatime->string, string->datetime, string->string với các loại định dạng:
     + dd/MM/yyyy
     + yyyy-MM-dd
     + yyyy-MM-dd HH:mm:ss
