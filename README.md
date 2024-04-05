@@ -13,7 +13,7 @@ Có 2 cách để khai báo package vào dự án:
 
 # Function
 ## DateTimeUtils
-- Trả về kiểu DateTime tương ứng từ thứ 2 đến chủ nhật của tuần hiện tại
+- return DateTime: tương ứng từ thứ 2 đến chủ nhật của tuần hiện tại
     + DateTimeUtils.getMonday 
     + DateTimeUtils.getTuesday
     + DateTimeUtils.getWednesday
@@ -21,7 +21,7 @@ Có 2 cách để khai báo package vào dự án:
     + DateTimeUtils.getFriday
     + DateTimeUtils.getSaturday
     + DateTimeUtils.getSunday
-- Trả về DateTime tương ứng từ thứ 2 đến chủ nhật của tuần ngày truyền vào DateTime time
+- return DateTime: tương ứng từ thứ 2 đến chủ nhật của tuần ngày truyền vào
     + DateTimeUtils.getMondayByTime(DateTime time)
     + DateTimeUtils.getTuesdayByTime(DateTime time)
     + DateTimeUtils.getWednesdayByTime(DateTime time)
@@ -41,57 +41,88 @@ Có 2 cách để khai báo package vào dự án:
     + yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
     + HH:mm dd/MM/yyyy
 
-
-trả về kiểu String: convert datetime truyền vào sang string với định dạng của enum EDateFM
+convert datetime sang string với định dạng của enum EDateFM
   - String dateTimeToString(DateTime? date, EDateFM fm)
+    + return String
     + DateTime? date: Ngày cần chuyển sang kiểu String
     + EDateFM fm: kiểu định dạng trả về của String
 
-
-trả về DateTime: convert string có định dạng của enum EDateFM
+convert string có định dạng của enum EDateFM
 - DateTime stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
+  + return DateTime
   + String? string: chuỗi cần convert sang DateTime
   + EDateFM fm: kiểu định dạng của String đang truyền vào
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
 
-
 trả về kiểu String: convert string có định dạng của EDateFM fmFrom sang string có định dạng EDateFM fmTo
 - String stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
+  + return String
   + String? string: chuỗi cần chuyển định dạng
   + EDateFM fmFrom: kiểu định dạng của String đang truyền vào
   + EDateFM fmTo: kiểu định dạng của String cần trả về
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
 
-
 ## JsonFileUtil
-Đọc file json và trả về data dạng Map
-- getMapData(String pathJsonFile)
+Đọc file json tại assets và trả về data dạng Map. Từ Map sẽ parse sang model cần dùng
+- Future<Map> getMapData(String pathJsonFile)
+  + return Future<Map>
+  + String pathJsonFile: đường dẫn của file json được lưu lại trong source. Ví dụ assets/address/address_pro.json
 
 
 ## StringUtil
-- Mã hoá string sang dạng Md5
-    + toMd5(String input)
-- Chuyển định dạng tiền tệ input dạng double
-    + toCurrency(double number)
-- xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm
-    + removeDiacritics(String input)
-- Các loại validate
-    + isEmail(String input)
-    + isPhoneNumber(String input)
-    + isValidCCCD(String cccd)
-    + isValidPassport(String passport)
+Mã hoá string sang dạng Md5
+- String toMd5(String input)
+  + Return: String
+  + String input: giá trị cần mã hoá Md5
+
+convert sang định dạng tiền tệ. ví dụ: 100.286.020.524,17
+- String toCurrency(var number)
+  + Return: String
+  + var number: có thể truyền kiểu double, int, Sring để covert sang định dạng tiền tệ
+
+xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm. ví dụ: removeDiacritics("ngôn ngữ Tiếng Việt") -> "ngon ngu tieng viet"
+- String removeDiacritics(String input)
+  + return String
+  + String input: giá trị truyền vào
+
+Kiểm tra định dạng email, trả về true nếu đúng định dạng email, ngược lại là false
+- bool isEmail(String input)
+  + return bool
+  + String input: chuỗi cần check định dạng
+ 
+Kiểm tra định dạng số điện thoại, trả về true nếu đúng định dạng số điện thoại, ngược lại là false
+- bool isPhoneNumber(String input)
+  + return bool
+  + String input: chuỗi cần check định dạng
+
+Kiểm tra chuỗi có định dạng CCCD, trả về true nếu đúng định dạng CCCD, ngược lại là false
+- bool isValidCCCD(String cccd)
+  + return bool
+  + String input: chuỗi cần check định dạng
+
+Kiểm tra chuỗi có định dạng Pasport, trả về true nếu đúng định dạng Pasport, ngược lại là false
+- bool isValidPassport(String passport)
+  + return bool
+  + String input: chuỗi cần check định dạng
  
 
 ## DeviceUtil
+- enum Device { iphone, ipad, ipadLandscape }
 Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet dạng xoay ngang hoặc dọc
-
+- Device getDeviceType()
+  + return Device: có 3 loại thiết bị là iphone, ipad dọc, và ipad ngang
 
 ## ResponsiveUtil
-trả về size dựa vào định dạng thiết bị đang dùng
-- getSize({double? iphone, double? ipad, double? ipadLandscape})
+trả về size dựa vào định dạng thiết bị đang dùng được phát hiện ở DeviceUtil -> getDeviceType
+- double getSize({double? iphone, double? ipad, double? ipadLandscape})
+  + return double
+  + double? iphone: giá trị sẽ trả về nếu thiết bị là iphone
+  + double? ipad: giá trị sẽ trả về nếu thiết bị là ipad dọc
+  + double? ipadLandscape: giá trị sẽ trả về nếu thiết bị là ipad ngang
 
 
 ## ImageUtil
 Lưu hình ảnh từ link về thiết bị 
-- saveNetworkImage(String url)
+- void saveNetworkImage(String url)
+  + String url: đường dẫn của hình ảnh cần lưu vào máy
 
