@@ -13,33 +13,49 @@ Có 2 cách để khai báo package vào dự án:
 
 # Function
 ## DateTimeUtils
-- return DateTime monday - sunday in week at now
-    + getMonday
-    + getTuesday
-    + getWednesday
-    + getThursday
-    + getFriday
-    + getSaturday
-    + getSunday
-- return DateTime monday - sunday in week at time input
-    + getMondayByTime(DateTime time)
-    + getTuesdayByTime(DateTime time)
-    + getWednesdayByTime(DateTime time)
-    + getThursdayByTime(DateTime time)
-    + getFridayByTime(DateTime time)
-    + getSaturdayByTime(DateTime time)
-    + getSundayByTime(DateTime time)
+- Trả về kiểu DateTime tương ứng từ thứ 2 đến chủ nhật của tuần hiện tại
+    + DateTimeUtils.getMonday 
+    + DateTimeUtils.getTuesday
+    + DateTimeUtils.getWednesday
+    + DateTimeUtils.getThursday
+    + DateTimeUtils.getFriday
+    + DateTimeUtils.getSaturday
+    + DateTimeUtils.getSunday
+- Trả về DateTime tương ứng từ thứ 2 đến chủ nhật của tuần ngày truyền vào DateTime time
+    + DateTimeUtils.getMondayByTime(DateTime time)
+    + DateTimeUtils.getTuesdayByTime(DateTime time)
+    + DateTimeUtils.getWednesdayByTime(DateTime time)
+    + DateTimeUtils.getThursdayByTime(DateTime time)
+    + DateTimeUtils.getFridayByTime(DateTime time)
+    + DateTimeUtils.getSaturdayByTime(DateTime time)
+    + DateTimeUtils.getSundayByTime(DateTime time)
 ## FormatDate
-- chuyển đổi định dạng data qua lại từ datatime->string, string->datetime, string->string với các loại định dạng:
+- enum EDateFM {ddMMyyyy,yyyyMMdd,yyyyMMddHHmmss,ddMMyyyyHHmm,yyyyMMddTHHmmssSSSZ,HHmmddMMyyyy}
+- các loại định dạng tương ứng với enum EDateFM:
     + dd/MM/yyyy
     + yyyy-MM-dd
     + yyyy-MM-dd HH:mm:ss
     + dd/MM/yyyy HH:mm
     + yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
     + HH:mm dd/MM/yyyy
-- dateTimeToString(DateTime? date, EDateFM fm)
-- stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
-- stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
+
+trả về kiểu String: convert datetime truyền vào sang string với định dạng của enum EDateFM
+  - String dateTimeToString(DateTime? date, EDateFM fm)
+    + DateTime? date: Ngày cần chuyển sang kiểu String
+    + EDateFM fm: kiểu định dạng trả về của String
+    + 
+trả về DateTime: convert string có định dạng của enum EDateFM
+- DateTime stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
+  + String? string: chuỗi cần convert sang DateTime
+  + EDateFM fm: kiểu định dạng của String đang truyền vào
+  + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
+  + 
+trả về kiểu String: convert string có định dạng của EDateFM fmFrom sang string có định dạng EDateFM fmTo trả về kiểu String
+- String stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
+  + String? string: chuỗi cần chuyển định dạng
+  + EDateFM fmFrom: kiểu định dạng của String đang truyền vào
+  + EDateFM fmTo: kiểu định dạng của String cần trả về
+  + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
 ## JsonFileUtil
 Đọc file json và trả về data dạng Map
 - getMapData(String pathJsonFile)
