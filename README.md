@@ -51,10 +51,10 @@ Chuyển định dạng tiền tệ input dạng double
 - removeDiacritics(String input)
 xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm
 - Các loại validate
-+ isEmail(String input)
-+ isPhoneNumber(String input)
-+ isValidCCCD(String cccd)
-+ isValidPassport(String passport)
+    + isEmail(String input)
+    + isPhoneNumber(String input)
+    + isValidCCCD(String cccd)
+    + isValidPassport(String passport)
 # DeviceUtil
 Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet dạng xoay ngang hoặc dọc
 # ResponsiveUtil
