@@ -60,4 +60,7 @@ Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet
 ## ResponsiveUtil
 trả về size dựa vào định dạng thiết bị đang dùng
 - getSize({double? iphone, double? ipad, double? ipadLandscape})
+## ImageUtil
+Lưu hình ảnh từ link về thiết bị 
+- saveNetworkImage(String url)
 
