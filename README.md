@@ -44,12 +44,12 @@ chuyển đổi định dạng data qua lại từ datatime->string, string->dat
 Đọc file json và trả về data dạng Map
 - getMapData(String pathJsonFile)
 # StringUtil
-- toMd5(String input)
 Mã hoá string sang dạng Md5
-- toCurrency(double number)
+- toMd5(String input)
 Chuyển định dạng tiền tệ input dạng double
-- removeDiacritics(String input)
+- toCurrency(double number)
 xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm
+- removeDiacritics(String input)
 - Các loại validate
     + isEmail(String input)
     + isPhoneNumber(String input)
@@ -58,5 +58,6 @@ xoá đi dấu câu trong Tiếng Việt, dùng trong tìm kiếm
 # DeviceUtil
 Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet dạng xoay ngang hoặc dọc
 # ResponsiveUtil
-- getSize({double? iphone, double? ipad, double? ipadLandscape})
 trả về size dựa vào định dạng thiết bị đang dùng
+- getSize({double? iphone, double? ipad, double? ipadLandscape})
+
