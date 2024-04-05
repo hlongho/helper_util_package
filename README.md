@@ -29,8 +29,11 @@ Có 2 cách để khai báo package vào dự án:
     + DateTimeUtils.getFridayByTime(DateTime time)
     + DateTimeUtils.getSaturdayByTime(DateTime time)
     + DateTimeUtils.getSundayByTime(DateTime time)
+ 
+
 ## FormatDate
 - enum EDateFM {ddMMyyyy,yyyyMMdd,yyyyMMddHHmmss,ddMMyyyyHHmm,yyyyMMddTHHmmssSSSZ,HHmmddMMyyyy}
+
 - các loại định dạng tương ứng với enum EDateFM:
     + dd/MM/yyyy
     + yyyy-MM-dd
@@ -43,22 +46,25 @@ trả về kiểu String: convert datetime truyền vào sang string với đị
   - String dateTimeToString(DateTime? date, EDateFM fm)
     + DateTime? date: Ngày cần chuyển sang kiểu String
     + EDateFM fm: kiểu định dạng trả về của String
-    + 
+
 trả về DateTime: convert string có định dạng của enum EDateFM
 - DateTime stringToDateTime(String? string, EDateFM fm, {Duration? timeAdd})
   + String? string: chuỗi cần convert sang DateTime
   + EDateFM fm: kiểu định dạng của String đang truyền vào
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
-  + 
+
 trả về kiểu String: convert string có định dạng của EDateFM fmFrom sang string có định dạng EDateFM fmTo trả về kiểu String
 - String stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd})
   + String? string: chuỗi cần chuyển định dạng
   + EDateFM fmFrom: kiểu định dạng của String đang truyền vào
   + EDateFM fmTo: kiểu định dạng của String cần trả về
   + Duration? timeAdd: cộng thêm thời gian chênh lệch múi giờ nếu có
+
 ## JsonFileUtil
 Đọc file json và trả về data dạng Map
 - getMapData(String pathJsonFile)
+
+
 ## StringUtil
 - Mã hoá string sang dạng Md5
     + toMd5(String input)
@@ -71,11 +77,17 @@ trả về kiểu String: convert string có định dạng của EDateFM fmFrom
     + isPhoneNumber(String input)
     + isValidCCCD(String cccd)
     + isValidPassport(String passport)
+ 
+
 ## DeviceUtil
 Xác định thiết bị dạng điện thoại di động, hoặc ipad, tablet dạng xoay ngang hoặc dọc
+
+
 ## ResponsiveUtil
 trả về size dựa vào định dạng thiết bị đang dùng
 - getSize({double? iphone, double? ipad, double? ipadLandscape})
+
+
 ## ImageUtil
 Lưu hình ảnh từ link về thiết bị 
 - saveNetworkImage(String url)
