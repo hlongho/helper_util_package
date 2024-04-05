@@ -41,7 +41,7 @@ Có 2 cách để khai báo package vào dự án:
     + yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
     + HH:mm dd/MM/yyyy
 
-convert DateTime sang String có định dạng của enum EDateFM
+### convert DateTime sang String có định dạng của enum EDateFM
   - String dateTimeToString(DateTime? date, EDateFM fm)
     + return String
     + DateTime? date: Ngày cần chuyển sang kiểu String
