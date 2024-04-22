@@ -41,13 +41,27 @@ DateTimeUtils.getSunday
 ```
 
 ### return DateTime: get DateTime của thứ 2 đến chủ nhật (tuần của ngày truyền vào: DateTime time)
-    + DateTimeUtils.getMondayByTime(DateTime time)
-    + DateTimeUtils.getTuesdayByTime(DateTime time)
-    + DateTimeUtils.getWednesdayByTime(DateTime time)
-    + DateTimeUtils.getThursdayByTime(DateTime time)
-    + DateTimeUtils.getFridayByTime(DateTime time)
-    + DateTimeUtils.getSaturdayByTime(DateTime time)
-    + DateTimeUtils.getSundayByTime(DateTime time)
+```
+DateTimeUtils.getMondayByTime(DateTime time)
+```
+```
+DateTimeUtils.getTuesdayByTime(DateTime time)
+```
+```
+DateTimeUtils.getWednesdayByTime(DateTime time)
+```
+```
+DateTimeUtils.getThursdayByTime(DateTime time)
+```
+```
+DateTimeUtils.getFridayByTime(DateTime time)
+```
+```
+DateTimeUtils.getSaturdayByTime(DateTime time)
+```
+```
+DateTimeUtils.getSundayByTime(DateTime time)
+```
  
 
 ## FormatDate (Các loại convert giữa String có định dạng EDateFm với nhau hoặc DateTime)
