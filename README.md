@@ -8,21 +8,37 @@ helper_util_package:
   path: ./helper_util_package
 ```
 ### Khai báo link github vào pubspec.yaml
-- helper_util_package:
-   + git:
-      + url: https://github.com/hlongho/helper_util_package.git
-      + ref: main
+```
+helper_util_package:
+  git:
+    url: https://github.com/hlongho/helper_util_package.git
+    ref: main
+```
 
 # Function
 ## DateTimeUtils (Get DateTime thứ 2 - chủ nhật của tuần hiện tại hoặc 1 ngày bất kì)
 ### return DateTime: tương ứng từ thứ 2 đến chủ nhật của tuần hiện tại
-    + DateTimeUtils.getMonday
-    + DateTimeUtils.getTuesday
-    + DateTimeUtils.getWednesday
-    + DateTimeUtils.getThursday
-    + DateTimeUtils.getFriday
-    + DateTimeUtils.getSaturday
-    + DateTimeUtils.getSunday
+```
+DateTimeUtils.getMonday
+```
+```
+DateTimeUtils.getTuesday
+```
+```
+DateTimeUtils.getWednesday
+```
+```
+DateTimeUtils.getThursday
+```
+```
+DateTimeUtils.getFriday
+```
+```
+DateTimeUtils.getSaturday
+```
+```
+DateTimeUtils.getSunday
+```
 
 ### return DateTime: get DateTime của thứ 2 đến chủ nhật (tuần của ngày truyền vào: DateTime time)
     + DateTimeUtils.getMondayByTime(DateTime time)
