@@ -10,6 +10,7 @@ class ImageUtil {
 
   static ImageUtil get instance => _instance;
 
+  /// save image to device
   saveNetworkImage(String url) async {
     await EasyLoading.show(
       status: 'Downloading...',

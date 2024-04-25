@@ -1,15 +1,18 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:crypto/crypto.dart';
 import 'package:intl/intl.dart';
 
 class StringUtil {
+  /// String to Md5
   static String toMd5(String input) {
     var bytesToHash = utf8.encode(input);
     var md5Digest = md5.convert(bytesToHash);
     return '$md5Digest';
   }
 
+  /// convert to Currency
   static String toCurrency(var input) {
     final currencyFormatter = NumberFormat('#,###', 'ID');
     if (input is double || input is int) {
@@ -19,12 +22,13 @@ class StringUtil {
         double number = double.parse(input);
         return currencyFormatter.format(number);
       } catch (e) {
-        print(e);
+        log(e.toString());
       }
     }
     return "error";
   }
 
+  /// remove Diacritics
   static String removeDiacritics(String input) {
     return input
         .replaceAll(RegExp(r'[àáạảãâầấậẩẫăằắặẳẵ]', caseSensitive: false), 'a')
@@ -33,12 +37,13 @@ class StringUtil {
         .replaceAll(RegExp(r'[òóọỏõôồốộổỗơờớợởỡ]', caseSensitive: false), 'o')
         .replaceAll(RegExp(r'[ùúụủũưừứựửữ]', caseSensitive: false), 'u')
         .replaceAll(RegExp(r'[ỳýỵỷỹ]', caseSensitive: false), 'y')
-        .replaceAll(RegExp(r'[đ]', caseSensitive: false), 'd')
+        .replaceAll(RegExp(r'đ', caseSensitive: false), 'd')
         .replaceAll('-', '')
         .replaceAll('.', '')
         .toLowerCase();
   }
 
+  /// validate email
   static bool isEmail(String input) {
     final RegExp regex = RegExp(
       r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
@@ -46,6 +51,7 @@ class StringUtil {
     return regex.hasMatch(input);
   }
 
+  /// validate Phone Number
   static bool isPhoneNumber(String input) {
     final RegExp regex = RegExp(
       r'^(03[2-9]|05[689]|07[06-9]|08[1-689]|09[0-46-9])[0-9]{7}$',
@@ -53,6 +59,7 @@ class StringUtil {
     return regex.hasMatch(input);
   }
 
+  /// validate CCCD
   static bool isValidCCCD(String cccd) {
     // Regex pattern để kiểm tra CCCD có 12 số hoặc 9 số
     String pattern = r'^(?:\d{9}|\d{12})$';
@@ -60,6 +67,7 @@ class StringUtil {
     return regExp.hasMatch(cccd);
   }
 
+  /// validate Passport
   static bool isValidPassport(String passport) {
     // Regex pattern cho định dạng Passport (ví dụ: "AB1234567")
     String pattern = r'^[A-Za-z]{2}\d{7}$';

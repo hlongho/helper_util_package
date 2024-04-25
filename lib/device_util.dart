@@ -6,8 +6,8 @@ class DeviceUtil {
   static bool isLandscape = false;
   static Device device = Device.iphone;
 
-  // Tham khảo app NamLong để khởi tạo isLandscape và device
-
+  /// Tham khảo app NamLong để khởi tạo isLandscape và device
+  /// get Device Type
   static Device getDeviceType() {
     return device == Device.iphone
         ? Device.iphone

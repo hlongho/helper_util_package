@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class JsonFileUtil {
+  /// get Map Data from file json
   Future<Map> getMapData(String pathJsonFile) async {
     String json;
     json = await rootBundle.loadString(pathJsonFile);

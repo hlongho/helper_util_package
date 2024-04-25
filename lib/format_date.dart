@@ -1,6 +1,7 @@
 import 'package:intl/intl.dart';
 
 class FormatDate {
+  /// convert datetime To String
   static String? dateTimeToString(DateTime? date, EDateFM fm) {
     if (date == null) {
       return null;
@@ -8,6 +9,7 @@ class FormatDate {
     return fm.datetimeFormat.format(date);
   }
 
+  /// convert String To datetime
   static DateTime? stringToDateTime(String? string, EDateFM fm,
       {Duration? timeAdd}) {
     if (string == null || string.isEmpty) {
@@ -20,8 +22,9 @@ class FormatDate {
     return dateTime;
   }
 
-  static String? stringToString(String? string, {required EDateFM fmFrom, required EDateFM fmTo,
-      Duration? timeAdd}) {
+  /// convert String To String
+  static String? stringToString(String? string,
+      {required EDateFM fmFrom, required EDateFM fmTo, Duration? timeAdd}) {
     DateTime? dateTime = stringToDateTime(string, fmFrom, timeAdd: timeAdd);
     if (dateTime == null) return null;
     return fmTo.datetimeFormat.format(dateTime);
@@ -34,8 +37,9 @@ enum EDateFM {
   yyyyMMddHHmmss,
   ddMMyyyyHHmm,
   yyyyMMddTHHmmssSSSZ,
-  HHmmddMMyyyy;
+  hhmmddMMyyyy;
 
+  /// Get DateFormat with format
   DateFormat get datetimeFormat {
     switch (this) {
       case EDateFM.ddMMyyyy:
@@ -48,7 +52,7 @@ enum EDateFM {
         return DateFormat('dd/MM/yyyy HH:mm');
       case EDateFM.yyyyMMddTHHmmssSSSZ:
         return DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-      case EDateFM.HHmmddMMyyyy:
+      case EDateFM.hhmmddMMyyyy:
         return DateFormat('HH:mm dd/MM/yyyy');
     }
   }
