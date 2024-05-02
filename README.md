@@ -65,13 +65,16 @@ DateTimeUtils.getSundayByTime(DateTime time)
  
 
 ## FormatDate (Các loại convert giữa String có định dạng EDateFm với nhau hoặc DateTime)
-- enum EDateFM {
+```
+enum EDateFM {
   ddMMyyyy,
   yyyyMMdd,
   yyyyMMddHHmmss,
   ddMMyyyyHHmm,
   yyyyMMddTHHmmssSSSZ,
-  HHmmddMMyyyy}
+  HHmmddMMyyyy
+}
+```
 - các loại định dạng tương ứng với enum EDateFM:
     + dd/MM/yyyy
     + yyyy-MM-dd
