@@ -159,3 +159,9 @@ DateTimeUtils.getSundayByTime(DateTime time)
 - void saveNetworkImage(String url)
   + String url: đường dẫn của hình ảnh cần lưu vào máy
 
+
+## Show log
+### show
+- AppLogger.show(data)
+  + data: show data.toString()
+
